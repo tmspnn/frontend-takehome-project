@@ -1,0 +1,47 @@
+{
+  "name": "frontend-takehome-project",
+  "version": "1.0.0",
+  "description": "Replicate the following website design of a simple patients appointment management board with search and filter functionality.",
+  "main": "index.js",
+  "scripts": {
+    "fmt": "npx prettier --write app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmspnn/frontend-takehome-project.git"
+  },
+  "keywords": [
+    "frontend",
+    "takehome"
+  ],
+  "author": "Thomas Peng Li",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/tmspnn/frontend-takehome-project/issues"
+  },
+  "homepage": "https://github.com/tmspnn/frontend-takehome-project#readme",
+  "dependencies": {
+    "@types/react-select": "^4.0.17",
+    "dayjs": "^1.10.7",
+    "lodash": "^4.17.21",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.2",
+    "react-datetime": "^3.1.1",
+    "react-dom": "^17.0.2",
+    "react-select": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.173",
+    "@types/react": "^17.0.24",
+    "@types/react-calendar": "^3.4.3",
+    "@types/react-dom": "^17.0.9",
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.3.0",
+    "sass": "^1.42.0",
+    "sass-loader": "^12.1.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3"
+  }
+}

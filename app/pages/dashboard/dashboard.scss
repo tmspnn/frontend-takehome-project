@@ -1,0 +1,231 @@
+$bg-color: #efefef;
+$grey-white: #ddd;
+$grey: #777;
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+body > div {
+    @extend .flex;
+
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.side-panel {
+    width: 25%;
+    height: 100%;
+    border-right: 1px solid $grey-white;
+    box-shadow: 0.1rem 0 0.1rem 0 $grey-white;
+
+    .search-bar {
+        position: relative;
+        padding: 2rem;
+
+        input {
+            width: 100%;
+            height: 2rem;
+            padding: 0 1rem 0 2.3rem;
+            border: none;
+            border-radius: 0.2rem;
+            outline: none;
+        }
+
+        i {
+            position: absolute;
+            left: 2.8rem;
+            top: 2.5rem;
+            color: $grey;
+        }
+    }
+
+    .period-selector {
+        border-top: 1px solid $grey-white;
+
+        h3 {
+            margin: 0 2rem;
+            padding: 2rem 0 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: $grey;
+        }
+
+        .calendar {
+            position: relative;
+            padding: 0 2rem;
+
+            input {
+                width: 100%;
+                height: 2rem;
+                padding: 0 1rem 0 2.3rem;
+                border: none;
+                border-radius: 0.2rem;
+                outline: none;
+            }
+
+            i {
+                position: absolute;
+                left: 2.8rem;
+                top: 0.5rem;
+                color: $grey;
+            }
+
+            .month-tr {
+                padding: 0.8rem 0;
+
+                &:hover {
+                    background-color: $bg-color;
+                }
+            }
+        }
+    }
+
+    .appointment-types-selector {
+        margin-top: 2rem;
+        border-top: 1px solid $grey-white;
+
+        h3 {
+            margin: 0 2rem;
+            padding: 2rem 0 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: $grey;
+        }
+
+        .select {
+            padding: 0 2rem;
+        }
+    }
+}
+
+.appointments {
+    @extend .flex;
+
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 100%;
+    overflow: hidden auto;
+
+    .column {
+        width: 30%;
+        margin: 1rem;
+        padding: 0 0 2rem;
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 0.1rem 0.5rem $grey-white;
+
+        &.pending .card {
+            left: 0;
+        }
+
+        &.review .card {
+            left: -2rem;
+        }
+
+        &.completed .card {
+            right: 0;
+        }
+
+        h3 {
+            padding: 0 1.5rem;
+            font-style: italic;
+        }
+
+        .appointment-record {
+            position: relative;
+            padding: 0 1rem 1.2rem;
+            border-top: 1px solid $grey-white;
+
+            &:hover {
+                .card {
+                    display: block;
+                }
+            }
+
+            .row {
+                @extend .flex;
+                flex-wrap: nowrap;
+            }
+
+            .patient {
+                margin: 1rem 0;
+            }
+
+            .type {
+                margin-left: auto;
+                font-size: 0.8rem;
+                padding: 0.25rem 1.5rem;
+                border-radius: 0.2rem;
+                color: #fff;
+            }
+
+            .signee,
+            .supervisor,
+            .service-date {
+                flex: 1;
+
+                h4 {
+                    margin: 0.8rem 0;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    color: $grey;
+                }
+
+                .profile {
+                    width: 3rem;
+                    min-width: 3rem;
+                    height: 3rem;
+                    border-radius: 50%;
+                    background-color: $grey-white;
+                }
+
+                .name {
+                    padding-left: 0.5rem;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                }
+            }
+
+            .supervisor > .flex {
+                justify-content: flex-end;
+            }
+
+            .service-date > div {
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+
+            .card {
+                display: none;
+                position: absolute;
+                top: 3rem;
+                z-index: 1;
+                padding: 1.5rem 2rem;
+                width: 30rem;
+                background-color: #fff;
+                box-shadow: 0 0 0.5rem $grey-white;
+                border-radius: 0.2rem;
+
+                h3 {
+                    padding-left: 0.5rem;
+                }
+
+                .service-date {
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
